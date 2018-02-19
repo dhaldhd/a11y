@@ -58,7 +58,7 @@
       <div class="hello-world">Hello, world!</div>
       <input type="radio" name="option">Hello!
       <input type="radio" name="option">Bye!
-      <div id="close" class="fancy-button">닫기</div>
+      <div id="close" class="fancy-button" tabindex="0">닫기</div>
     </dialog>
     <script>
       let settingButton = document.getElementById('setting');
@@ -73,13 +73,14 @@
       closeButton.addEventListener('keypress', function(e) {
         if (e.keyCode == 13) closeDialog();
       });
-   
+
       function openDialog() {
         dialog.showModal();
       }
-      
+
       function closeDialog() {
         dialog.close();
+        settingButton.focus();
       }
     </script>
   </body>
